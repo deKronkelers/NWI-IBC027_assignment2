@@ -20,6 +20,19 @@ Here is an implementation of a Queue using two stacks to store its elements writ
 
 \lstinputlisting{code/TwoStackQueue.groovy}
 
+It can be used like this:
+
+\begin{lstlisting}
+def range = 1..10
+TwoStackQueue<Integer> q = new TwoStackQueue()
+for (int i in range) {
+    q.add i
+}
+for (int i in range) {
+    println q.get()
+}
+\end{lstlisting}
+
 \section{} %2
 \section{} %3
 \section{} %4
