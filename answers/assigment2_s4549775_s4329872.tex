@@ -38,6 +38,16 @@ Here is an imlpementation of a Deque using an array to store its elements writte
 
 \lstinputlisting{code/ArrayDeque.groovy}
 
+Here is a usage example:
+
+\begin{lstlisting}
+def deque = new ArrayDeque<Integer>(2)
+deque.addEnd(3)
+deque.addStart(5)
+println deque.removeStart()
+println deque.removeEnd()
+\end{lstlisting}
+
 \section{} %3
 \section{} %4
 \section{} %5
