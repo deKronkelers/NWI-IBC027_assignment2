@@ -61,6 +61,22 @@ You could implement a method to delete the next element in $O(1)$. You could als
 
 \section{} %4
 \section{} %5
+A direct access table is a table of the same size as the key range. Its size does not change but it instead contains a field for every possible key. This makes insert, delete, get, search, etc. $O(1)$ operations.
+
+When we want to find the maximum element we need to iterate over all entries and compare them to each other. The naive approach would take $O(m)$ time in the worst case (the maximum element is in the last field) where $m$ is the size of the table.
+
+We could improve this by storing a list of used keys and only comparing the elements at those indexes to each other. This would bring the time complexity down to $O(k)$ where $k$ is the number of entries.
+
+Given here is a description of the naive approach:
+
+\begin{enumerate}
+	\item Create a variable $max$ and set it to the fist element.
+	\item Create a variable $next$
+	\item \label{itm:loop} Check if there is a next element. If so, set $next$ to it. If not, return $max$.
+	\item If $next > max$ then $max = next$.
+	\item Go to step \ref{itm:loop}.
+\end{enumerate}
+
 \section{} %6
 $h(k) = k \mod 7$
 
