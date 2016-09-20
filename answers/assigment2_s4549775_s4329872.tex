@@ -38,7 +38,7 @@ for (int i in range) {
 \end{lstlisting}
 
 \section{} %2
-Here is an imlpementation of a Deque using an array to store its elements written in Groovy:
+Here is an implementation of a Deque using an array to store its elements written in Groovy:
 
 \lstinputlisting{code/ArrayDeque.groovy}
 
@@ -84,7 +84,7 @@ $h(12) = 5,$ $h(44) = 2,$ $h(13) = 6,$ $h(88) = 4$\\
 $h(23) = 2,$ $h(94) = 3,$ $h(11) = 4,$ $h(39) = 4$\\
 $h(20) = 6,$ $h(16) = 2,$ $h(5) = 5$
 
-The slots are empty initally:
+The slots are empty initially:
 \begin{tikzpicture}[entry/.style={regular polygon, regular polygon sides=4, draw, text width=1em}]
 	\node [entry] (a0_0) {};
 	\node [entry, right=0em of a0_0] (a1_0) {};
@@ -123,7 +123,7 @@ When there are already elements stored at index 5 we need to resolve this collis
 	\draw[->, thick] (a5_0) -- (a5_1);
 \end{tikzpicture}
 
-After adding all the values the hash table looke like this:
+After adding all the values the hash table looks like this:
 
 \begin{tikzpicture}[entry/.style={regular polygon, regular polygon sides=4, draw, text width=1em}]
 	\node [entry] (a0_0) {};
