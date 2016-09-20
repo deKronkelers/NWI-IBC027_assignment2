@@ -17,13 +17,13 @@ class SinglyLinkedCircularList<T> {
      */
     void insert(T elem) {
         assert !elem.is(null)
-        if (currentNode.value) {
+        if (currentNode.value.is(null)) {
+            currentNode.value = elem
+        } else {
             ListNode<T> newNode = new ListNode<>()
             newNode.value = elem
             newNode.nextNode = currentNode.nextNode
             currentNode.nextNode = newNode
-        } else {
-            currentNode.value = elem
         }
     }
 
