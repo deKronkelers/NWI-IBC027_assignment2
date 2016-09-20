@@ -60,6 +60,14 @@ Here is an implementation of a singly linked, circular list in written in Groovy
 You could implement a method to delete the next element in $O(1)$. You could also implement a method to look at the next element in $O(1)$ to be able to use the $deleteNext$ method in a useful way.
 
 \section{} %4
+On the exercise sheet it says "Deletion is the difficult operation to implement. A Delete operation cannot simply mark a slot as empty (or NIL), because this will isolate records further down the probe sequence.".
+
+I did not understand why this should not work so I implemented a hash table in Groovy and contrary to what it says on the exercise sheet it does indeed work:
+
+\lstinputlisting{code/MyHashTable.groovy}
+
+I simply use $null$ to mark the so called "tombstones" and it works perfectly. I can insert, delete, and search for elements in the table without isolating any entries.
+
 \section{} %5
 A direct access table is a table of the same size as the key range. Its size does not change but it instead contains a field for every possible key. This makes insert, delete, get, search, etc. $O(1)$ operations.
 
