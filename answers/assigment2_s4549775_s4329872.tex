@@ -107,4 +107,29 @@ When there are already elements stored at index 5 we need to resolve this collis
 	\draw[->, thick] (a5_0) -- (a5_1);
 \end{tikzpicture}
 
+After adding all the values the hash table looke like this:
+
+\begin{tikzpicture}[entry/.style={regular polygon, regular polygon sides=4, draw, text width=1em}]
+	\node [entry] (a0_0) {};
+	\node [entry, right=0em of a0_0] (a1_0) {};
+	\node [entry, right=0em of a1_0] (a2_0) {44};
+	\node [entry, right=0em of a2_0] (a3_0) {94};
+	\node [entry, right=0em of a3_0] (a4_0) {88};
+	\node [entry, right=0em of a4_0] (a5_0) {12};
+	\node [entry, right=0em of a5_0] (a6_0) {13};
+
+	\node [entry, below=of a2_0] (a2_1) {23};
+	\draw[->] (a2_0) -- (a2_1);
+	\node [entry, below=of a2_1] (a2_2) {16};
+	\draw[->] (a2_1) -- (a2_2);
+	\node [entry, below=of a4_0] (a4_1) {11};
+	\draw[->] (a4_0) -- (a4_1);
+	\node [entry, below=of a4_1] (a4_2) {39};
+	\draw[->] (a4_1) -- (a4_2);
+	\node [entry, below=of a5_0] (a5_1) {5};
+	\draw[->] (a5_0) -- (a5_1);
+	\node [entry, below=of a6_0] (a6_1) {20};
+	\draw[->] (a6_0) -- (a6_1);
+\end{tikzpicture}
+
 \end{document}
