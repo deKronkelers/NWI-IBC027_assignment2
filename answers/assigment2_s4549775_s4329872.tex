@@ -79,4 +79,32 @@ The slots are empty initally:
 	\node [entry, right=0em of a5_0] (a6_0) {};
 \end{tikzpicture}
 
+When we add an element to the table we store it at the index of its hash value. Example: $h(12) = 5$ so we store $12$ at index 5:
+
+\begin{tikzpicture}[entry/.style={regular polygon, regular polygon sides=4, draw, text width=1em}]
+	\node [entry] (a0_0) {};
+	\node [entry, right=0em of a0_0] (a1_0) {};
+	\node [entry, right=0em of a1_0] (a2_0) {};
+	\node [entry, right=0em of a2_0] (a3_0) {};
+	\node [entry, right=0em of a3_0] (a4_0) {};
+	\node [entry, right=0em of a4_0] (a5_0) {12};
+	\node [entry, right=0em of a5_0] (a6_0) {};
+\end{tikzpicture}
+
+When there are already elements stored at index 5 we need to resolve this collision. Here we use chaining as a resolution strategy. This means that when storing $5$ whose hash value is $h(5) = 5$ we will store it in a list node and point the last list node at index $5$ ($12$ in this case) to it:
+
+\begin{tikzpicture}[entry/.style={regular polygon, regular polygon sides=4, draw, text width=1em}]
+	\node [entry] (a0_0) {};
+	\node [entry, right=0em of a0_0] (a1_0) {};
+	\node [entry, right=0em of a1_0] (a2_0) {};
+	\node [entry, right=0em of a2_0] (a3_0) {};
+	\node [entry, right=0em of a3_0] (a4_0) {};
+	\node [entry, right=0em of a4_0] (a5_0) {12};
+	\node [entry, right=0em of a5_0] (a6_0) {};
+
+	\node [entry, below=of a5_0] (a5_1) {5};
+
+	\draw[->, thick] (a5_0) -- (a5_1);
+\end{tikzpicture}
+
 \end{document}
