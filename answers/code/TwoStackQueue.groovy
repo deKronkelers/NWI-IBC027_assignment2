@@ -7,6 +7,8 @@ class TwoStackQueue<T> {
 
     /**
      * Add an element to the Queue.
+     *
+     * This operation's time complexity is O(1).
      */
     void add(T elem) {
         inStack.push elem
@@ -14,6 +16,10 @@ class TwoStackQueue<T> {
 
     /**
      * Get the oldest element from the Queue.
+     *
+     * This operation's best case (the out stack is NOT empty) time complexity
+     * is O(1). The worst case (the out stack is empty) takes O(n) time where
+     * n is the size of the in stack.
      *
      * @return the oldest element on the Queue
      */
