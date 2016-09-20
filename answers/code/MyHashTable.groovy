@@ -1,3 +1,6 @@
+/**
+ * A hash table supporting insertion, deletion, and searching.
+ */
 class MyHashTable<T> {
     private final ListNode<T>[] array
 
